@@ -2,7 +2,10 @@
 @import 'fonts';
 @import 'mixins';
 
-
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
 body{
   font-family: 'Graphik', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 15px;
@@ -27,6 +30,7 @@ header{
   display: block;
   width: 100%;
   min-height: 75px;
+  border-bottom: 1px solid #efefef;
 }
 
 .logo{
@@ -220,8 +224,8 @@ footer{
   text-align: center;
   display: flex;
   justify-content: center;
-  padding: 24px 0;
-  border-top:1px solid #ddd;
+  padding: 18px 0;
+  border-top: 1px solid #efefef;
 }
 
 .powered{
@@ -272,6 +276,7 @@ span{
   &__amount{
     font-size: 2rem;
     text-align: center;
+    font-weight: 500;
   }
 }
 
@@ -299,7 +304,7 @@ span{
       height: 10px;
       border-radius: 50%;
       content: '';
-      background-color: #1F4494;
+      background-color: #fbc210;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -330,7 +335,7 @@ span{
   }
 
   input:checked ~ label {
-    color: #fff;
+    color: #3c454c;
 
     &:before {
       transform: translate(-50%, -50%) scale3d(56, 56, 1);
@@ -338,8 +343,8 @@ span{
     }
 
     &:after {
-      background-color: #FBC210;
-      border-color: #FBC210;
+      background-color: #3c454c;
+      border-color: #3c454c;
     }
   }
 
