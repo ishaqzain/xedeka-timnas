@@ -11,6 +11,16 @@ body{
   background-color: #fafafa;
   text-rendering: optimizeLegibility;
 }
+*,
+*::before,
+*::after {
+box-sizing: inherit;
+}
+
+html {
+box-sizing: border-box;
+}
+
 
 header{
   background-color: #ffffff;
@@ -58,7 +68,7 @@ header{
   padding: 64px 0;
   @include mobile{
     padding: 64px 15px;
-    background-position: 30% 50%;
+    background-position: 78% 50%;
   }
   h1{
     font-size: 2.3rem;
@@ -68,6 +78,7 @@ header{
     // text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 10px;
+    line-height: normal;
     @include mobile{
       font-size: 1.75rem;
     }
@@ -78,6 +89,7 @@ header{
     letter-spacing: 0;
     text-align: center;
     font-weight: 500;
+    line-height: normal;
     @include mobile{
       font-size: 18px;
     }
@@ -123,6 +135,9 @@ header{
     @include mobile{
       font-size: 2.2rem;
     }
+    @include small-mobile{
+      font-size: 1.85rem;
+    }
   }
   &--text{
     font-weight: 300;
@@ -155,11 +170,26 @@ a{
   font-size: 15px;
   color: #FFFFFF;
   letter-spacing: 0;
-  text-align: center;
   text-transform: uppercase;
-  padding: 18px 40px;
+  padding: 16px 40px;
   display: inline-block;
   transition: 0.3s;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  margin-bottom: 0;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
   &:hover{
     background-color: #16a252;
   }
@@ -222,4 +252,139 @@ span{
       cursor: pointer;
     }
   }
+}
+
+
+.content--donasi{
+  max-width: 550px;
+}
+.donasi{
+  &__wrapper{
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+    padding: 32px;
+  }
+  &__label{
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  &__amount{
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+// input
+.inputGroup {
+  background-color: #ddd;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+
+  label {
+    padding: 17px 30px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #3C454C;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+
+    &:before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      content: '';
+      background-color: #1F4494;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale3d(1, 1, 1);
+      // transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      width: 32px;
+      height: 32px;
+      content: '';
+      border: 2px solid #D1D7DC;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+      background-repeat: no-repeat;
+      background-position: 2px 3px;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: all 200ms ease-in;
+    }
+  }
+
+  input:checked ~ label {
+    color: #fff;
+
+    &:before {
+      transform: translate(-50%, -50%) scale3d(56, 56, 1);
+      opacity: 1;
+    }
+
+    &:after {
+      background-color: #FBC210;
+      border-color: #FBC210;
+    }
+  }
+
+  input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+  }
+}
+
+
+// codepen formatting
+.form {
+padding: 0 16px;
+max-width: 550px;
+margin: 50px auto;
+font-size: 18px;
+font-weight: 600;
+line-height: 36px;
+}
+
+.form-group{
+  margin-bottom: 36px;
+}
+
+input[type=text], input[type=email], select {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: inherit;
+  box-shadow: none;
+  border:1px solid #ddd;
+}
+
+.text-center{
+  text-align: center;
 }
